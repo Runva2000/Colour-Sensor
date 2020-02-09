@@ -1,0 +1,37 @@
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+pinMode(A0,INPUT);
+pinMode(8,OUTPUT);
+pinMode(9,OUTPUT);
+pinMode(10,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+digitalWrite(8,HIGH);
+delay(500);
+double rval=(analogRead(A0))*5.0/1024.0;
+Serial.print(".");
+delay(1500);
+digitalWrite(8,LOW);
+digitalWrite(9,HIGH);
+delay(500);
+double gval=(analogRead(A0))*5.0/1024.0;
+Serial.print(".");
+delay(1500);
+digitalWrite(9,LOW);
+digitalWrite(10,HIGH);
+delay(500);
+double bval=(analogRead(A0))*5.0/1024.0;
+Serial.println(".");
+delay(1500);
+digitalWrite(10,LOW);
+delay(1000);
+if(rval>gval&&rval>bval)
+Serial.println("The object is Red");
+else if(gval>rval&&gval>bval)
+Serial.println("The object is Green");
+else 
+Serial.println("The object is Blue");
+}
