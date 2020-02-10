@@ -11,6 +11,6 @@ For example, if a green object is placed in front of the LDR, the resistance of 
 the resistance becomes minimum when the green LED glows.
 This is the principle used to convert a brightness sensor (LDR) to a colour sensor.
 
-The arduino is used for encoding the data LDR senses in the form of the voltage across it. It drops higher voltage when it exhibits 
+The arduino is used for decoding the data LDR senses in the form of the voltage across it. It drops higher voltage when it exhibits 
 larger resistance. This voltage value is taken for each case where each of the red, green and blue LEDs shine on the object and is compared
 in the software of arduino, in order to return the output colour.
